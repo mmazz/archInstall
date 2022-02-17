@@ -68,9 +68,9 @@ mkdir /mnt/boot
 mount $PARTBOOT /mnt/boot
 
 echo -e "\nDone.\n\n"
-reflector -c Brazil -a 6 - -sort rate - -save /etc/pacman.d/mirrorlist
-pacman -Syy
-#-------- Install
+reflector -c Brazil -a 6 --sort rate --save /etc/pacman.d/mirrorlist
+pacman -Syy archlinux-keyring
+echo "#-------- Install"
 
 pacstrap /mnt base base-devel linux linux-firmware neovim
 #-------- Setup
@@ -78,6 +78,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 mkdir /mnt/etc/myarch
 cp inside_chroot.sh /mnt/etc/myarch/
+echo "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 
 chmod +x /mnt/etc/myarch/inside_chroot.sh
 
