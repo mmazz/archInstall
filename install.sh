@@ -69,7 +69,7 @@ mount $PARTBOOT /mnt/boot
 
 echo -e "\nDone.\n\n"
 reflector -c Brazil -a 6 --sort rate --save /etc/pacman.d/mirrorlist
-pacman -Syy archlinux-keyring
+pacman -Syy --noconfirm archlinux-keyring
 echo "#-------- Install"
 
 pacstrap /mnt base base-devel linux linux-firmware neovim
@@ -77,7 +77,7 @@ pacstrap /mnt base base-devel linux linux-firmware neovim
 genfstab -U /mnt >> /mnt/etc/fstab
 
 mkdir /mnt/etc/myarch
-cp inside_chroot.sh /mnt/etc/myarch/
+cp ~/archInstall/inside_chroot.sh /mnt/etc/myarch/
 echo "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 
 chmod +x /mnt/etc/myarch/inside_chroot.sh
