@@ -8,17 +8,18 @@ mkdir ~/.config
 while true; do
     read -p $'Add big software? Y/N\n' yn
     case $yn in
-        [Yy]* )
-            sudo pacman -Sy --needed --noconfirm xorg-server xorg-xinit xdg-utils libxft \
-                libx11 libxinerama libxcomposite  git man  pcmanfm \
-                alsa-oss alsa-utils zsh xwallpaper dunst dash \
-                go intel-ucode imagemagick kolourpaint libreoffice-fresh  \
-                llpp lxappearance mpv   python python-matplotlib \
-                python-dbus python-dbus-common python-pep517 \
-		        python-pip zathura zathura-pdf-mupdf xclip sxiv maim arc-gtk-theme \
-                gtk-engine-murrine  gnome-themes-extra gtk-engines xorg-xrdb \
-                tree npm xcompmgr wget unzip unrar tk texlive-core redshift pulseaudio \
-                pulseaudio-alsa pinta pamixer openssh nodejs btop xdg-user-dirs texlive-science
+        [Yy]* )    
+            sudo pacman -Sy --needed --noconfirm xorg-server xorg-xinit xdg-utils xorg-xrdb xdg-user-dirs  \
+               				intel-ucode libxft libx11 libxinerama libxcomposite \
+                			alsa-oss alsa-utils pulseaudio pulseaudio-alsa pamixer \
+					git man  pcmanfm  zsh xwallpaper xcompmgr dunst dash \
+                			go kolourpaint libreoffice-fresh  \
+               				llpp lxappearance     \
+               				python python-matplotlib python-dbus python-dbus-common python-pep517 python-pip\
+		 			zathura zathura-pdf-mupdf xclip sxiv maim \
+                 			arc-gtk-theme gtk-engine-murrine gnome-themes-extra gtk-engines \
+                			tree npm  wget unzip unrar tk  redshift  \
+                 			pinta openssh nodejs btop  texlive-science texlive-core
             xdg-user-dirs-update
             sudo -u $USERNAME ln -sfT dash /usr/bin/sh
             sudo -u $USERNAME npm i -g pyrght html bash-language-server
