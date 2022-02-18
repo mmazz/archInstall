@@ -1,5 +1,8 @@
 #!/bin/bash
 
+ln -sf /usr/share/zoneinfo/America/Argentina/Buenos_Aires /etc/localtime
+hwclock --systohc
+
 printf \
 "
 Enter username:
@@ -22,9 +25,6 @@ echo LANG=en_US.UTF-8 >> /etc/locale.conf
 locale-gen
 
 
-ln -sf /usr/share/zoneinfo/America/Argentina/Buenos_Aires /etc/localtime
-hwclock --systohc
-
 echo $HOSTNAME > /etc/hostname
 echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
@@ -46,14 +46,6 @@ passwd $USERNAME
 
 usermod -aG wheel,audio,video,storage -s /bin/bash $USERNAME
 
-mkdir /etc/systemd/system/getty@tty1.service.d
-printf \
-"[Service]
-ExecStart=
-ExecStart=-/usr/bin/agetty --autologin $USERNAME --noclear %%I \$TERM" \
-> /etc/systemd/system/getty@tty1.service.d/override.conf
-
-sleep 10
 echo -e \
 "%wheel ALL=(ALL) ALL\\n%wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/systemctl suspend,/usr/bin/wifi-menu,/usr/bin/systemctl restart NetworkManager,/usr/bin/rc-service NetworkManager restart,/usr/bin/loadkeys" \
 >> /etc/sudoers
@@ -67,5 +59,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 sleep 10
 systemctl enable NetworkManager
 
+cp /etc/myarch/setup.sh ~/home/$USERNAME
 
 exit
