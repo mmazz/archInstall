@@ -1,5 +1,5 @@
 
-sed -i "s/^#Color/Color/g" /etc/pacman.conf
+
 sleep 10
 #-------- timesynchonisation
 systemctl enable systemd-timesyncd.service
