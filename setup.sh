@@ -9,7 +9,7 @@ while true; do
     read -p $'Add big software? Y/N\n' yn
     case $yn in
         [Yy]* )
-            pacman -Sy --needed --noconfirm xorg-server xorg-xinit xdg-utils libxft \
+            sudo pacman -Sy --needed --noconfirm xorg-server xorg-xinit xdg-utils libxft \
                 libx11 libxinerama libxcomposite  git man  pcmanfm \
                 alsa-oss alsa-utils zsh xwallpaper dunst dash \
                 go intel-ucode imagemagick kolourpaint libreoffice-fresh  \
