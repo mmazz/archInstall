@@ -1,4 +1,10 @@
 
+echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> ~/.bashrc
+source ~/.bashrc
+echo ".dotfiles" >> .gitignore
+git clone --bare https://github.com/mmazz/.dotfiles.git $HOME/.dotfiles
+config checkout
+config config --local status.showUntrackedFiles no
 
 sleep 10
 #-------- timesynchonisation
@@ -27,7 +33,6 @@ while true; do
             pip3 install --upgrade neovim
 
             #-------- aur helper
-            cd ~/.config
             git clone https://aur.archlinux.org/yay.git
             cd yay
             sudo -u $USERNAME makepkg -sri --noconfirm
@@ -62,15 +67,7 @@ cd dmenu
 sudo make clean install
 rm -rf .git
 cd ..
-sleep 10
-echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> ~/.bashrc
-source ~/.bashrc
-echo ".dotfiles" >> .gitignore
-git clone --bare https://github.com/mmazz/.dotfiles.git $HOME/.dotfiles
-config checkout
-config config --local status.showUntrackedFiles no
 
-sleep 10
 rm ~/.bashrc
 
 chsh -s $(which zsh)
