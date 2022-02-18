@@ -1,5 +1,6 @@
-
+sudo pacman -S --noconfirm git
 echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> ~/.bashrc
+bash
 source ~/.bashrc
 echo ".dotfiles" >> .gitignore
 git clone --bare https://github.com/mmazz/.dotfiles.git $HOME/.dotfiles
@@ -18,7 +19,7 @@ while true; do
             sudo pacman -Sy --needed --noconfirm xorg-server xorg-xinit xdg-utils xorg-xrdb xdg-user-dirs  \
                				intel-ucode libxft libx11 libxinerama libxcomposite \
                 			alsa-oss alsa-utils pulseaudio pulseaudio-alsa pamixer \
-					git man  pcmanfm  zsh xwallpaper xcompmgr dunst dash \
+					man  pcmanfm  zsh xwallpaper xcompmgr dunst dash \
                 			go kolourpaint libreoffice-fresh  \
                				llpp lxappearance     \
                				python python-matplotlib python-dbus python-dbus-common python-pep517 python-pip\
