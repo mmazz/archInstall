@@ -50,7 +50,7 @@ echo -e \
 "%wheel ALL=(ALL) ALL\\n%wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/systemctl suspend,/usr/bin/wifi-menu,/usr/bin/systemctl restart NetworkManager,/usr/bin/rc-service NetworkManager restart,/usr/bin/loadkeys" \
 >> /etc/sudoers
 
-
+sed -i "s/^#Color/Color/g" /etc/pacman.conf
 pacman -Sy --needed --noconfirm grub efibootmgr networkmanager dosfstools os-prober mtools archlinux-keyring
 
 grub-install --target=x86_64-efi  --efi-directory=/boot --bootloader-id=GRUB
