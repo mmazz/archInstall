@@ -3,7 +3,7 @@
 sleep 10
 #-------- timesynchonisation
 systemctl enable systemd-timesyncd.service
-mkdir ~/tmp
+mkdir ~/.config
 ##-------- additional services
 while true; do
     read -p $'Add big software? Y/N\n' yn
@@ -26,7 +26,7 @@ while true; do
             pip3 install --upgrade neovim
 
             #-------- aur helper
-            cd ~/tmp
+            cd ~/.config
             git clone https://aur.archlinux.org/yay.git
             cd yay
             sudo -u $USERNAME makepkg -sri --noconfirm
