@@ -30,7 +30,7 @@ fi
 sed -i "s#DRIVENAME_REPLACE#DRIVE=\"$DRIVE\"#" inside_chroot.sh
 # wipe file system of the installation destination disk
 wipefs --all $DRIVE
-
+sleep 10
 # create a new EFI system partition of size 512 MiB with partition label as "BOOT"
 sgdisk -n 0:0:+550M -t 0:ef00 -c 0:BOOT $DRIVE
 
@@ -60,12 +60,12 @@ echo -e "\nMounting Partitions...\n"
 
 # mount the ROOT partition on "/mnt"
 mount $PARTROOT /mnt
-
+sleep 10
 # create necessary directories
 mkdir /mnt/boot
 
 # mount the EFI partition on "/mnt/boot"
-mount $PARTBOOT /mnt/bootrate
+mount $PARTBOOT /mnt/boot
 sleep 10
 echo -e "\nDone.\n\n"
 reflector -c Brazil -c chile -a 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
