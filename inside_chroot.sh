@@ -72,6 +72,8 @@ sleep 10
 pacman -Sy --needed --noconfirm grub efibootmgr networkmanager dosfstools os-prober mtools archlinux-keyring
 sleep 10
 grub-install --target=x86_64-efi  --efi-directory=/boot --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+
 sleep 10
 systemctl enable NetworkManager
 
