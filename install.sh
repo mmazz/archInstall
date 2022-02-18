@@ -38,10 +38,10 @@ sgdisk -n 0:0:+550M -t 0:ef00 -c 0:BOOT $DRIVE
 sgdisk -n 0:0:0 -t 0:8304 -c 0:ROOT $DRIVE
 
 # format partition 1 as FAT32 with file system label "ESP"
-mkfs.fat -F 32 -n "ESP" /dev/sda1
+mkfs.fat -F 32 -n "ESP" $PARTBOOT
 
 # format partition 2 as EXT4 with file system label "System"
-mkfs.ext4 -L "System" -F /dev/sda2
+mkfs.ext4 -L "System" -F $PARTROOT 
 
 timedatectl set-ntp true
 
