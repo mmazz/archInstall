@@ -68,7 +68,9 @@ mkdir /mnt/boot
 mount $PARTBOOT /mnt/boot
 
 echo -e "\nDone.\n\n"
-reflector -c Brazil -a 6 --sort rate --save /etc/pacman.d/mirrorlist
+reflector --protocol https --sort rate --save /etc/pacman.d/mirrorlist --verbose
+
+#reflector -c Brazil -a 6 --sort rate --save /etc/pacman.d/mirrorlist
 pacman -Syy --noconfirm archlinux-keyring
 echo "#-------- Install"
 
