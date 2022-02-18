@@ -99,8 +99,8 @@ while true; do
             xdg-user-dirs-update
             sudo -u $USERNAME ln -sfT dash /usr/bin/sh
             sudo -u $USERNAME npm i -g pyrght html bash-language-server
-            Python -m ensurepip --upgrade
-            Pip3 install --upgrade neovim
+            python -m ensurepip --upgrade
+            pip3 install --upgrade neovim
 
             #-------- aur helper
             cd /tmp
