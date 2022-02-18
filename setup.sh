@@ -80,16 +80,20 @@ sleep 10
 lspci -k | grep -A 2 -E "(VGA|3D)"
 
 echo "What grafic card?"
-select aind in "ati" "intel" "nvidia" "dont"; do
+select aind in "ati" "intel" "nvidia" "VM" "dont"; do
     case $aind in
         ati )
-            pacman -Sy --needed --noconfirm mesa xf86-video-ati;
+            sudo pacman -Sy --needed --noconfirm mesa xf86-video-ati;
             break;;
         intel )
-            pacman -Sy --needed --noconfirm mesa xf86-video-intel libva-intel-driver
+            sudo pacman -Sy --needed --noconfirm mesa xf86-video-intel libva-intel-driver
             break;;
         nvidia )
-            pacman -Sy --needed --noconfirm nvidia
+            sudo pacman -Sy --needed --noconfirm nvidia
+            break;;
+	 VM )
+	    sudo pacman -Sy --needed --noconfirm virtualbox-guest-utils ,xf86-video-vmware
+	    sudo modprobe -a vboxguest vboxsf vboxvideo
             break;;
         dont )
             break;;
