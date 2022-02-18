@@ -43,22 +43,22 @@ sleep 10
 cd /.config
 git clone https://github.com/mmazz/dwm.git
 cd dwm
-make clean install
+sudo make clean install
 
 cd ..
 git clone https://github.com/mmazz/dwm_status_bar.git
 cd dwm_status_bar
-make clean install
+sudo make clean install
 
 cd ..
 git clone https://github.com/mmazz/st.git
 cd st
-make clean install
+sudo make clean install
 
 cd ..
 git clone -depth 1 https://github.com/mmazz/dmenu.git
 cd dmenu
-make clean install
+sudo make clean install
 rm -rf .git
 cd ..
 sleep 10
