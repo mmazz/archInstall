@@ -65,25 +65,26 @@ mount $PARTROOT /mnt
 mkdir /mnt/boot
 
 # mount the EFI partition on "/mnt/boot"
-mount $PARTBOOT /mnt/boot
-
+mount $PARTBOOT /mnt/bootrate
+sleep 10
 echo -e "\nDone.\n\n"
-reflector --protocol https --sort rate --save /etc/pacman.d/mirrorlist --verbose
+reflector -c Brazil -c chile -a 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 
 #reflector -c Brazil -a 6 --sort rate --save /etc/pacman.d/mirrorlist
+sleep 10
 pacman -Syy --noconfirm archlinux-keyring
 echo "#-------- Install"
-
+sleep 10
 pacstrap /mnt base base-devel linux linux-firmware neovim
 #-------- Setup
 genfstab -U /mnt >> /mnt/etc/fstab
-
+sleep 10
 mkdir /mnt/etc/myarch
 cp ~/archInstall/inside_chroot.sh /mnt/etc/myarch/
 echo "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
-
+sleep 10
 chmod +x /mnt/etc/myarch/inside_chroot.sh
-
+sleep 10
 arch-chroot /mnt /bin/bash -c "su - -c /etc/myarch/inside_chroot.sh"
 
 
