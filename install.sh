@@ -9,6 +9,8 @@
 #cd myarch
 #bash arch_1.sh
 
+timedatectl set-ntp true
+
 #-------- Disk
 lsblk
 printf \
@@ -43,7 +45,6 @@ mkfs.fat -F 32 -n "ESP" $PARTBOOT
 # format partition 2 as EXT4 with file system label "System"
 mkfs.ext4 -L "System" -F $PARTROOT 
 
-timedatectl set-ntp true
 
 echo -e "\nDone.\n\n"
 
@@ -81,6 +82,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 mkdir /mnt/etc/myarch
 cp ~/archInstall/inside_chroot.sh /mnt/etc/myarch/
+cp ~/archInstall/setup.sh /mnt/etc/myarch/
 echo "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 
 chmod +x /mnt/etc/myarch/inside_chroot.sh
