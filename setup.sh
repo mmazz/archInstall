@@ -73,6 +73,8 @@ sleep 10
 rm ~/.bashrc
 
 chsh -s $(which zsh)
+rm $HOME/.xprofile
+rm $HOME/.zprofile
 ln -s $HOME/.config/x11/xprofile $HOME/.xprofile
 ln -s $HOME/.config/shell/profile $HOME/.zprofile
 sleep 10
