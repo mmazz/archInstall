@@ -90,12 +90,12 @@ while true; do
                 libx11 libxinerama libxcomposite  git man  pcmanfm \
                 alsa-oss alsa-utils zsh xwallpaper dunst dash \
                 go intel-ucode imagemagick kolourpaint libreoffice-fresh  \
-                llpp lxappearance mpv  pygtk pyqt5-common  python python-matplotlib \
+                llpp lxappearance mpv   python python-matplotlib \
                 python-dbus python-dbus-common python-pep517 \
 		        python-pip zathura zathura-pdf-mupdf xclip sxiv maim arc-gtk-theme \
                 gtk-engine-murrine  gnome-themes-extra gtk-engines xorg-xrdb \
-                tree npm xcompmgr wget unzip unrar tk texlive redshift pulseaudio \
-                pulseaudio-alsa pinta pamixer openssh nodejs btop xdg-user-dirs
+                tree npm xcompmgr wget unzip unrar tk texlive-core redshift pulseaudio \
+                pulseaudio-alsa pinta pamixer openssh nodejs btop xdg-user-dirs texlive-science
             xdg-user-dirs-update
             sudo -u $USERNAME ln -sfT dash /usr/bin/sh
             sudo -u $USERNAME npm i -g pyrght html bash-language-server
