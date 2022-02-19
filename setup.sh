@@ -76,7 +76,7 @@ cd st
 sudo make clean install
 
 cd ..
-git clone --depth 1 https://github.com/mmazz/dmenu.git
+git clone --depth 1 https:///git.suckless.org/dmenu
 cd dmenu
 sudo make clean install
 rm -rf .git
