@@ -1,7 +1,7 @@
 sudo pacman -S --noconfirm git
 echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> ~/.bashrc
 bash
-source ~/.bashrc
+source $HOME/.bashrc
 echo ".dotfiles" >> .gitignore
 git clone --bare https://github.com/mmazz/.dotfiles.git $HOME/.dotfiles
 config checkout
