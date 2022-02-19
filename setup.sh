@@ -1,11 +1,13 @@
-sudo pacman -S --noconfirm git
-echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> ~/.bashrc
-bash
-source $HOME/.bashrc
+sudo pacman -Sy --noconfirm git
+git config --global user.name "mmazz"
+git config --global user.email mazzantimatiass@gmail.com
+#echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> ~/.bashrc
+config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+#source $HOME/.bashrc
 echo ".dotfiles" >> .gitignore
 git clone --bare https://github.com/mmazz/.dotfiles.git $HOME/.dotfiles
-config checkout
-config config --local status.showUntrackedFiles no
+$config checkout
+$config config --local status.showUntrackedFiles no
 
 sleep 10
 #-------- timesynchonisation
