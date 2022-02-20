@@ -64,5 +64,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 sleep 10
 systemctl enable NetworkManager
 
+cp /etc/myarch/setup.sh home/$USERNAME
 
 exit
