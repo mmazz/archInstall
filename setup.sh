@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo pacman -Sy --noconfirm git
 git config --global user.name "mmazz"
 git config --global user.email mazzantimatiass@gmail.com
