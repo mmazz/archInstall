@@ -32,7 +32,7 @@ while true; do
     read -p $'Add big software? Y/N\n' yn
     case $yn in
         [Yy]* )    
-            sudo pacman -Sy --needed --noconfirm xorg-server xorg-xinit xdg-utils xorg-xrdb xdg-user-dirs  \
+            sudo pacman -Sy --needed --noconfirm xorg-server xorg-xinit xdg-utils xorg-xrdb xdg-user-dirs xautolock \
                				intel-ucode libxft libx11 libxinerama libxcomposite \
                 			alsa-oss alsa-utils pulseaudio pulseaudio-alsa pamixer \
 					man  pcmanfm  zsh xwallpaper xcompmgr dunst dash \
