@@ -46,7 +46,7 @@ while true; do
             sudo npm i -g pyright html bash-language-server
             python -m ensurepip --upgrade
             pip3 install --upgrade neovim
-
+	    git clone https://github.com/zdharma-continuum/fast-syntax-highlighting /usr/share/zsh/plugins/fast-syntax-highlighting
             #-------- aur helper
             git clone https://aur.archlinux.org/yay.git
             cd yay
