@@ -23,7 +23,6 @@ config submodule update --init --recursive
 config config status.showUntrackedFiles no
 
 
-
 #-------- timesynchonisation
 systemctl enable systemd-timesyncd.service
 mkdir ~/.config
@@ -65,6 +64,8 @@ while true; do
     esac
 done
 
+
+mkdir $HOME/.cache/zsh
 
 #-------- git
 cd $HOME/.config
