@@ -41,17 +41,18 @@ while true; do
                 			tree npm  wget unzip unrar tk  redshift  \
                  			pinta openssh nodejs btop  texlive-science texlive-core
             xdg-user-dirs-update
-            sudo -u $USERNAME ln -sfT dash /usr/bin/sh
-            sudo -u $USERNAME npm i -g pyrght html bash-language-server
+            sudo ln -sfT dash /usr/bin/sh
+            sudo npm i -g pyright html bash-language-server
             python -m ensurepip --upgrade
             pip3 install --upgrade neovim
 
             #-------- aur helper
             git clone https://aur.archlinux.org/yay.git
             cd yay
-            sudo -u $USERNAME makepkg -sri --noconfirm
-            sudo -u $USERNAME yay -S --noconfirm lf-git nerd-fonts-fira-code neovim-nightly-bin
-            break;;
+            makepkg -sri --noconfirm
+            yay -S --noconfirm lf-git nerd-fonts-fira-code
+            yay -S neovim-nightly-bin
+	    break;;
         [Nn]* )
             break;;
         * ) echo "Please answer yes or no.";;
