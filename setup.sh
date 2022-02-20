@@ -53,6 +53,7 @@ while true; do
             makepkg -sri --noconfirm
             yay -S --noconfirm lf-git nerd-fonts-fira-code brave-bin
             yay -S neovim-nightly-bin 
+	    cd $HOME
 	    break;;
         [Nn]* )
             break;;
@@ -62,27 +63,27 @@ done
 
 sleep 10
 #-------- git
-cd /.config
+cd $HOME/.config
 git clone https://github.com/mmazz/dwm.git
 cd dwm
 sudo make clean install
 
-cd ..
+cd $HOME/.config
 git clone https://github.com/mmazz/dwm_status_bar.git
 cd dwm_status_bar
 sudo make clean install
 
-cd ..
+cd $HOME/.config
 git clone https://github.com/mmazz/st.git
 cd st
 sudo make clean install
 
-cd ..
+cd $HOME/.config.
 git clone --depth 1 https://git.suckless.org/dmenu
 cd dmenu
 sudo make clean install
 rm -rf .git
-cd ..
+cd $HOME/.config
 
 rm ~/.bashrc
 
