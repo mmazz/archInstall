@@ -23,7 +23,7 @@ config submodule update --init --recursive
 config config status.showUntrackedFiles no
 
 
-sleep 10
+
 #-------- timesynchonisation
 systemctl enable systemd-timesyncd.service
 mkdir ~/.config
@@ -32,17 +32,17 @@ while true; do
     read -p $'Add big software? Y/N\n' yn
     case $yn in
         [Yy]* )    
-            sudo pacman -Sy --needed --noconfirm xorg-server xorg-xinit xdg-utils xorg-xrdb xdg-user-dirs xautolock \
+            sudo pacman -Sy --needed --noconfirm xorg-server xorg-xinit xdg-utils xorg-xrdb xdg-user-dirs xautolock xorg-xsroot xorg-xrandr\
                				intel-ucode libxft libx11 libxinerama libxcomposite \
                 			alsa-oss alsa-utils pulseaudio pulseaudio-alsa pamixer \
 					man  pcmanfm  zsh xwallpaper xcompmgr dunst dash \
                 			go kolourpaint libreoffice-fresh  \
                				llpp lxappearance     \
                				python python-matplotlib python-dbus python-dbus-common python-pep517 python-pip\
-		 			zathura zathura-pdf-mupdf xclip sxiv maim \
+		 			zathura zathura-pdf-mupdf xclip sxiv maim tm:wux \
                  			arc-gtk-theme gtk-engine-murrine gnome-themes-extra gtk-engines \
-                			tree npm  wget unzip unrar tk  redshift  \
-                 			pinta openssh nodejs btop texlive-core texlive-science
+                			tree npm  wget unzip unrar tk  redshift neofetch \
+                 			pinta openssh nodejs btop texlive-bin texlive-core texlive-science texlive-pictures
             xdg-user-dirs-update
             sudo ln -sfT dash /usr/bin/sh
             sudo npm i -g pyright html bash-language-server
@@ -53,7 +53,7 @@ while true; do
             git clone https://aur.archlinux.org/yay.git
             cd yay
             makepkg -sri --noconfirm
-            yay -S --noconfirm lf-git nerd-fonts-fira-code brave-bin 
+            yay -S --noconfirm lf-git nerd-fonts-complete brave-bin 
             yay -S neovim-nightly-bin nvim-packer-git
 	    cd $HOME
 	    break;;
@@ -63,7 +63,7 @@ while true; do
     esac
 done
 
-sleep 10
+
 #-------- git
 cd $HOME/.config
 git clone https://github.com/mmazz/dwm.git
@@ -118,3 +118,5 @@ select aind in "ati" "intel" "nvidia" "VM" "dont"; do
             break;;
     esac
 done
+echo "Donde! reboot now!";;
+reboot
