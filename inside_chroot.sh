@@ -3,6 +3,26 @@
 ln -sf /usr/share/zoneinfo/America/Argentina/Buenos_Aires /etc/localtime
 hwclock --systohc
 
+
+
+printf \
+"en_US ISO-8859-1
+en_US.UTF-8 UTF-8" \
+>> /etc/locale.gen
+
+locale-gen
+
+echo LANG=en_US.UTF-8 > /etc/locale.conf
+
+
+
+echo $HOSTNAME > /etc/hostname
+echo "127.0.0.1 localhost" >> /etc/hosts
+echo "::1       localhost" >> /etc/hosts
+echo "127.0.1.1 $HOSTNAME.localdomain $HOSTNAME" >> /etc/hosts
+
+
+#-------- users
 printf \
 "
 Enter username:
@@ -15,23 +35,6 @@ Enter hostname:
 "
 read HOSTNAME
 
-
-printf \
-"en_US ISO-8859-1
-en_US.UTF-8 UTF-8" \
->> /etc/locale.gen
-
-echo LANG=en_US.UTF-8 >> /etc/locale.conf
-locale-gen
-
-
-echo $HOSTNAME > /etc/hostname
-echo "127.0.0.1 localhost" >> /etc/hosts
-echo "::1       localhost" >> /etc/hosts
-echo "127.0.1.1 $HOSTNAME.localdomain $HOSTNAME" >> /etc/hosts
-
-
-#-------- users
 printf \
 "
 Enter root pw:
