@@ -40,7 +40,7 @@ while true; do
 		 			zathura zathura-pdf-mupdf xclip sxiv maim \
                  			arc-gtk-theme gtk-engine-murrine gnome-themes-extra gtk-engines \
                 			tree npm  wget unzip unrar tk  redshift  \
-                 			pinta openssh nodejs btop  texlive-science texlive-core
+                 			pinta openssh nodejs btop texlive-core texlive-science
             xdg-user-dirs-update
             sudo ln -sfT dash /usr/bin/sh
             sudo npm i -g pyright html bash-language-server
