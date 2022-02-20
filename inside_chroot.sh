@@ -19,7 +19,7 @@ read HOSTNAME
 printf \
 "en_US ISO-8859-1
 en_US.UTF-8 UTF-8" \
-> /etc/locale.gen
+>> /etc/locale.gen
 
 echo LANG=en_US.UTF-8 >> /etc/locale.conf
 locale-gen
