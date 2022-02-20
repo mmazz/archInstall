@@ -51,8 +51,8 @@ while true; do
             git clone https://aur.archlinux.org/yay.git
             cd yay
             makepkg -sri --noconfirm
-            yay -S --noconfirm lf-git nerd-fonts-fira-code
-            yay -S neovim-nightly-bin
+            yay -S --noconfirm lf-git nerd-fonts-fira-code brave-bin
+            yay -S neovim-nightly-bin 
 	    break;;
         [Nn]* )
             break;;
