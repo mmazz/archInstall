@@ -15,14 +15,6 @@ locale-gen
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 
 
-
-echo $HOSTNAME > /etc/hostname
-echo "127.0.0.1 localhost" >> /etc/hosts
-echo "::1       localhost" >> /etc/hosts
-echo "127.0.1.1 $HOSTNAME.localdomain $HOSTNAME" >> /etc/hosts
-
-
-#-------- users
 printf \
 "
 Enter username:
@@ -34,6 +26,16 @@ printf \
 Enter hostname:
 "
 read HOSTNAME
+
+
+echo $HOSTNAME > /etc/hostname
+echo "127.0.0.1 localhost" >> /etc/hosts
+echo "::1       localhost" >> /etc/hosts
+echo "127.0.1.1 $HOSTNAME.localdomain $HOSTNAME" >> /etc/hosts
+
+
+#-------- users
+
 
 printf \
 "
