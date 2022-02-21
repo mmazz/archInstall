@@ -121,5 +121,5 @@ select aind in "ati" "intel" "nvidia" "VM" "dont"; do
             break;;
     esac
 done
-echo "Donde! reboot now!";;
+echo "Donde! reboot now!";
 reboot
