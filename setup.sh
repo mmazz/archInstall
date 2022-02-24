@@ -36,7 +36,7 @@ while true; do
                 			alsa-oss alsa-utils pulseaudio pulseaudio-alsa pamixer \
 					man  pcmanfm  zsh xwallpaper xcompmgr dunst dash \
                 			go kolourpaint libreoffice-fresh  \
-               				llpp lxappearance     \
+               				llpp lxappearance bc calcurse    \
                				python python-matplotlib python-dbus python-dbus-common python-pep517 python-pip\
 		 			zathura zathura-pdf-mupdf xclip sxiv maim tmux \
                  			arc-gtk-theme gtk-engine-murrine gnome-themes-extra gtk-engines \
