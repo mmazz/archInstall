@@ -54,7 +54,7 @@ while true; do
             cd yay
             makepkg -sri --noconfirm
             yay -S --noconfirm lf-git nerd-fonts-complete brave-bin 
-            yay -S neovim-nightly-bin nvim-packer-git
+            yay -S neovim-nightly-bin nvim-packer-git atool
 	    cd $HOME
 	    wget -O $HOME/Pictures/wallpapers.tar.gz "https://drive.google.com/uc?export=download&id=1knNpKAqlEfMMjluH71J002Gi0zpX0P09"
 	    tar xvf $HOME/Pictures/wallpapers.tar.gz -C $HOME/Pictures
