@@ -41,7 +41,8 @@ while true; do
 		 			zathura zathura-pdf-mupdf xclip sxiv maim tmux \
                  			arc-gtk-theme gtk-engine-murrine gnome-themes-extra gtk-engines \
                 			tree npm  wget unzip unrar tk  redshift neofetch \
-                 			pinta openssh nodejs btop texlive-bin texlive-core texlive-latexextra texlive-science texlive-pictures
+                 			pinta openssh nodejs btop texlive-bin texlive-core texlive-latexextra texlive-science texlive-pictures \
+					lynx bat ueberzug
             xdg-user-dirs-update
             sudo ln -sfT dash /usr/bin/sh
             sudo npm i -g pyright html bash-language-server
