@@ -39,7 +39,7 @@ while true; do
                				llpp lxappearance bc calcurse    \
                				python python-matplotlib python-dbus python-dbus-common python-pep517 python-pip\
 		 			zathura zathura-pdf-mupdf xclip sxiv maim tmux \
-                 			arc-gtk-theme gtk-engine-murrine gnome-themes-extra gtk-engines \
+                 			arc-gtk-theme gtk-engine-murrine gnome-themes-extra gtk-engines mpv\
                 			tree npm  wget unzip unrar tk  redshift neofetch \
                  			pinta openssh nodejs btop texlive-bin texlive-core texlive-latexextra texlive-science texlive-pictures \
 					lynx bat ueberzug
