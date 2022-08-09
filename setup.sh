@@ -42,7 +42,7 @@ while true; do
                  			arc-gtk-theme gtk-engine-murrine gnome-themes-extra gtk-engines mpv\
                 			tree npm  wget unzip unrar tk  redshift neofetch \
                  			pinta openssh nodejs btop texlive-bin texlive-core texlive-latexextra texlive-science texlive-pictures \
-					lynx bat ueberzug
+					lynx bat ueberzug unclutter
             xdg-user-dirs-update
             sudo ln -sfT dash /usr/bin/sh
             sudo npm i -g pyright html bash-language-server
