@@ -27,6 +27,7 @@ config config status.showUntrackedFiles no
 systemctl enable systemd-timesyncd.service
 mkdir ~/.config
 ##-------- additional services
+## bear for compiling database of a c project for clang. unclutter for disappear mouse after 3 seconds of not use.
 while true; do
     read -p $'Add big software? Y/N\n' yn
     case $yn in
@@ -42,7 +43,7 @@ while true; do
                  			arc-gtk-theme gtk-engine-murrine gnome-themes-extra gtk-engines mpv\
                 			tree npm  wget unzip unrar tk  redshift neofetch \
                  			pinta openssh nodejs btop texlive-bin texlive-core texlive-latexextra texlive-science texlive-pictures \
-					lynx bat ueberzug unclutter
+					lynx bat ueberzug unclutter bear
             xdg-user-dirs-update
             sudo ln -sfT dash /usr/bin/sh
             sudo npm i -g pyright html bash-language-server
