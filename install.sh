@@ -29,9 +29,9 @@ else
 fi
 
 #tell inside_chroot the drivename
-sed -i "s#DRIVENAME_REPLACE#DRIVE=\"$DRIVE\"#" inside_chroot.sh
+sed -i "s#DRIVENAME_REPLACE#DRIVE=\"$DRIVE\"#" ~/archInstall/inside_chroot.sh
 # wipe file system of the installation destination disk
-wipefs --all $DRIVE
+wipefs -af $DRIVE
 
 # create a new EFI system partition of size 512 MiB with partition label as "BOOT"
 sgdisk -n 0:0:+550M -t 0:ef00 -c 0:BOOT $DRIVE
