@@ -2,9 +2,12 @@
 
 ## Install
 
-Enter to a bootable arch pendrive.
-Install git and clone this repo.
-chmod +x archInstall/install.sh
+- Enter to a bootable arch pendrive.
+- $pacman -Sy
+- $pacman -S archlinux-keyring
+- $pacman -S git
+- $git clone https://github.com/mmazz/archInstall.git
+- $chmod +x archInstall/install.sh
 
 This will install a fresh arch. Then copy setup.sh from /etc/myarch and give privilages and run it.
 Reboot and done!
