@@ -15,6 +15,18 @@
 This will install a fresh arch. Then copy setup.sh from /etc/myarch and give privilages and run it.
 Reboot and done!
 
+## Posible Problems
+
+Signatures... If cant reinstall archlinux-keyring:
+
+Not great solution....
+
+- $pacman-key --init
+- $pacman-keys --populate
+- $pacman-key --refresh-keys
+
+try, if this dont work do the first two steps again.
+
 ## TODO
 
 - Put all info of setup.sh insde of inside_chroot.sh
