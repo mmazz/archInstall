@@ -34,13 +34,27 @@ sed -i "s#DRIVENAME_REPLACE#DRIVE=\"$DRIVE\"#" ~/archInstall/inside_chroot.sh
 wipefs -af $DRIVE
 
 # create a new EFI system partition of size 512 MiB with partition label as "BOOT"
-sgdisk -n 0:0:+550M -t 0:ef00 -c 0:BOOT $DRIVE
+# sgdisk -n 0:0:+550M -t 0:ef00 -c 0:BOOT $DRIVE
 
 # create a new Linux x86-64 root (/) partition on the remaining space with partition label as "ROOT"
-sgdisk -n 0:0:0 -t 0:8304 -c 0:ROOT $DRIVE
+# sgdisk -n 0:0:0 -t 0:8304 -c 0:ROOT $DRIVE
 
-# format partition 1 as FAT32 with file system label "ESP"
-mkfs.fat -F 32 -n "ESP" $PARTBOOT
+(
+  echo g;
+  echo n;
+  echo ;
+  echo ;
+  echo +550M;
+  echo Y;
+  echo n;
+  echo ;
+  echo ;
+  echo ;
+  echo Y;
+  echo w;
+) | fdisk /dev/sdb
+# format partition 1 as FAT32 with file system label "Boot"
+mkfs.fat -F 32 -n "Boot" $PARTBOOT
 
 # format partition 2 as EXT4 with file system label "System"
 mkfs.ext4 -L "System" -F $PARTROOT 
