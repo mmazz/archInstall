@@ -17,14 +17,17 @@
 This will install a fresh arch. Then copy setup.sh from /etc/myarch and give privilages and run it.
 Reboot and done!
 
-## Posible Problems (not working)
+## Posible Problems 
 
 Signatures... If cant reinstall archlinux-keyring:
 
 Not great solution....
 
+- killall gpg-agent
+- rm -rf /etc/pacman.d/gnupg
 - $pacman-key --init
 - $pacman-keys --populate
+- Try installing archlinux-keyring, if not:
 - $pacman-key --refresh-keys
 
 try, if this dont work do the first two steps again.
