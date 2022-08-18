@@ -124,4 +124,4 @@ select aind in "ati" "intel" "nvidia" "VM" "dont"; do
     esac
 done
 echo "Donde! reboot now!";
-reboot
+sudo reboot
