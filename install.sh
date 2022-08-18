@@ -52,7 +52,7 @@ wipefs -af $DRIVE
   echo ;
   echo Y;
   echo w;
-) | fdisk /dev/sdb
+) | fdisk $DRIVE
 # format partition 1 as FAT32 with file system label "Boot"
 mkfs.fat -F 32 -n "Boot" $PARTBOOT
 
