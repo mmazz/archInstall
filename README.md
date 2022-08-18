@@ -14,8 +14,13 @@
 - For the moment check that there is no mount in the dev to use. $umount /dev/sda#
 - $./archInstall/install.sh
 
-This will install a fresh arch. Then copy setup.sh from /etc/myarch and give privilages and run it.
-Reboot and done!
+This will install a fresh arch. Then:
+
+- $chmod +x setup.sh
+- $./setup.sh
+- $reboot
+
+Done
 
 ## Posible Problems 
 
