@@ -117,6 +117,7 @@ select aind in "ati" "intel" "nvidia" "VM" "dont"; do
             break;;
 	 VM )
 	    sudo pacman -Sy --needed --noconfirm virtualbox-guest-utils xf86-video-vmware
+	    sudo systemctl enable vboxservice
 	    sudo modprobe -a vboxguest vboxsf vboxvideo
             break;;
         dont )
