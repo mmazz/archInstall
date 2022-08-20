@@ -37,7 +37,7 @@ while true; do
                 			alsa-oss alsa-utils pulseaudio pulseaudio-alsa pamixer \
 					man  pcmanfm  zsh xwallpaper xcompmgr dunst dash \
                 			go kolourpaint libreoffice-fresh  \
-               				lxappearance bc calcurse    \
+               				lxappearance bc calcurse  cmake \
                				python python-matplotlib python-dbus python-dbus-common python-pep517 python-pip\
 		 			zathura zathura-pdf-mupdf xclip sxiv maim tmux \
                  			arc-gtk-theme gtk-engine-murrine gnome-themes-extra gtk-engines mpv\
@@ -51,11 +51,16 @@ while true; do
             pip3 install --upgrade neovim
 	    sudo git clone https://github.com/zdharma-continuum/fast-syntax-highlighting /usr/share/zsh/plugins/fast-syntax-highlighting
             #-------- aur helper
-            git clone https://aur.archlinux.org/yay.git
+	    git clone --depth 1 https://github.com/neovim/neovim.git
+	    cd neovim
+	    make CMAKE_BUILD_TYPE=Release
+	    sudo make install
+	    cd ..	    
+            git clone --depth 1 https://aur.archlinux.org/yay.git
             cd yay
             makepkg -sri --noconfirm
             yay -S --noconfirm lf-git nerd-fonts-complete brave-bin 
-            yay -S neovim-nightly-bin nvim-packer-git atool
+           # yay -S neovim-nightly-bin nvim-packer-git atool
 	    cd $HOME
 	    wget -O $HOME/Pictures/wallpapers.tar.gz "https://drive.google.com/uc?export=download&id=1knNpKAqlEfMMjluH71J002Gi0zpX0P09"
 	    tar xvf $HOME/Pictures/wallpapers.tar.gz -C $HOME/Pictures
