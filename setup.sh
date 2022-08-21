@@ -37,7 +37,7 @@ while true; do
                 			alsa-oss alsa-utils pulseaudio pulseaudio-alsa pamixer \
 					man  pcmanfm  zsh xwallpaper xcompmgr dunst dash \
                 			go kolourpaint libreoffice-fresh  \
-               				lxappearance bc calcurse  cmake \
+               				lxappearance bc calcurse  cmake rofi \
                				python python-matplotlib python-dbus python-dbus-common python-pep517 python-pip\
 		 			zathura zathura-pdf-mupdf xclip sxiv maim tmux \
                  			arc-gtk-theme gtk-engine-murrine gnome-themes-extra gtk-engines mpv\
@@ -49,6 +49,7 @@ while true; do
             sudo npm i -g pyright html bash-language-server
             python -m ensurepip --upgrade
             pip3 install --upgrade neovim
+	    pip3 install inkscape-figures
 	    sudo git clone https://github.com/zdharma-continuum/fast-syntax-highlighting /usr/share/zsh/plugins/fast-syntax-highlighting
             #-------- aur helper
 	    git clone --depth 1 https://github.com/neovim/neovim.git
