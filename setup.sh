@@ -39,7 +39,7 @@ while true; do
 					man  pcmanfm  zsh xwallpaper xcompmgr dunst dash \
                 			go kolourpaint libreoffice-fresh  \
                				lxappearance bc calcurse  cmake rofi \
-               				python python-matplotlib python-dbus python-dbus-common python-pep517 python-pip\
+               				python python-matplotlib python-dbus python-dbus-common python-pep440 python-pip\
 		 			zathura zathura-pdf-mupdf xclip sxiv maim tmux \
                  			arc-gtk-theme gtk-engine-murrine gnome-themes-extra gtk-engines mpv\
                 			tree npm  wget unzip unrar tk  redshift neofetch \
@@ -53,11 +53,7 @@ while true; do
 	    pip3 install inkscape-figures
 	    sudo git clone https://github.com/zdharma-continuum/fast-syntax-highlighting /usr/share/zsh/plugins/fast-syntax-highlighting
             #-------- aur helper
-	    git clone --depth 1 https://github.com/neovim/neovim.git
-	    cd neovim
-	    make CMAKE_BUILD_TYPE=Release
-	    sudo make install
-	    cd ..	    
+	  	    
             git clone --depth 1 https://aur.archlinux.org/yay.git
             cd yay
             makepkg -sri --noconfirm
