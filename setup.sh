@@ -3,8 +3,9 @@ sudo pacman -Sy --noconfirm git
 git config --global user.name "mmazz"
 git config --global user.email mazzantimatiass@gmail.com
 echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> ~/.bashrc
+shopt -s expand_aliases
 
-
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 echo ".dotfiles" >> .gitignore
 git clone --bare --recurse-submodules https://github.com/mmazz/.dotfiles.git $HOME/.dotfiles
 function config {
