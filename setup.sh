@@ -103,6 +103,7 @@ rm ~/.xprofile
 rm ~/.zprofile
 ln -s $HOME/.config/x11/xprofile $HOME/.xprofile
 ln -s $HOME/.config/shell/profile $HOME/.zprofile
+xdg-mime default org.pwmt.zathura.desktop applications/pdf
 sleep 10
 #-------- grafic
 lspci -k | grep -A 2 -E "(VGA|3D)"
