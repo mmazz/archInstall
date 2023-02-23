@@ -57,7 +57,7 @@ while true; do
             git clone --depth 1 https://aur.archlinux.org/yay.git
             cd yay
             makepkg -sri --noconfirm
-            yay -S --noconfirm lf-git nerd-fonts-complete brave-bin 
+            yay -S --noconfirm lf-git nerd-fonts-git brave-bin 
            # yay -S neovim-nightly-bin nvim-packer-git atool
 	    cd $HOME
 	    wget -O $HOME/Pictures/wallpapers.tar.gz "https://drive.google.com/uc?export=download&id=1knNpKAqlEfMMjluH71J002Gi0zpX0P09"
