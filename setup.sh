@@ -28,17 +28,18 @@ config config status.showUntrackedFiles no
 systemctl enable systemd-timesyncd.service
 mkdir ~/.config
 ##-------- additional services
-## bear for compiling database of a c project for clang. unclutter for disappear mouse after 3 seconds of not use.
+sudo pacman -Sy --needed --noconfirm xorg-server xorg-xinit xdg-utils xorg-xrdb xdg-user-dirs xautolock xorg-xsetroot xorg-xrandr\
+               				intel-ucode libxft libx11 libxinerama libxcomposite \
+                			alsa-oss alsa-utils pulseaudio pulseaudio-alsa pamixer cmake dash\
+sudo ln -sfT dash /usr/bin/sh
 while true; do
     read -p $'Add big software? Y/N\n' yn
     case $yn in
         [Yy]* )    
-            sudo pacman -Sy --needed --noconfirm xorg-server xorg-xinit xdg-utils xorg-xrdb xdg-user-dirs xautolock xorg-xsetroot xorg-xrandr\
-               				intel-ucode libxft libx11 libxinerama libxcomposite \
-                			alsa-oss alsa-utils pulseaudio pulseaudio-alsa pamixer \
-					man  pcmanfm  zsh xwallpaper xcompmgr dunst dash \
+	## bear for compiling database of a c project for clang. unclutter for disappear mouse after 3 seconds of not use.
+            sudo pacman -Sy --needed --noconfirm man  pcmanfm  zsh xwallpaper xcompmgr dunst  \
                 			go kolourpaint libreoffice-fresh  \
-               				lxappearance bc calcurse  cmake rofi \
+               				lxappearance bc calcurse   rofi \
                				python python-matplotlib python-dbus python-dbus-common python-pep440 python-pip\
 		 			zathura zathura-pdf-mupdf xclip sxiv maim tmux \
                  			arc-gtk-theme gtk-engine-murrine gnome-themes-extra gtk-engines mpv\
@@ -46,7 +47,15 @@ while true; do
                  			pinta openssh nodejs btop texlive-bin texlive-core texlive-latexextra texlive-science texlive-pictures \
 					lynx bat ueberzug unclutter bear mc mlocate
             xdg-user-dirs-update
-            sudo ln -sfT dash /usr/bin/sh
+	    mv Downloads downloads
+	    mv Docuemnts documents
+	    mv Pictures pictures
+	    mv Videos videos
+	    mv Templates templates
+	    rmdir Desktop
+	    mv Public public
+	    rmdir Music
+            
             sudo npm i -g pyright html bash-language-server
             python -m ensurepip --upgrade
             pip3 install --upgrade neovim
