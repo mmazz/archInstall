@@ -48,7 +48,7 @@ while true; do
 					lynx bat ueberzug unclutter bear mc mlocate
             xdg-user-dirs-update
 	    mv Downloads downloads
-	    mv Docuemnts documents
+	    mv Documents documents
 	    mv Pictures pictures
 	    mv Videos videos
 	    mv Templates templates
@@ -70,7 +70,7 @@ while true; do
            # yay -S neovim-nightly-bin nvim-packer-git atool
 	    cd $HOME
 	    wget -O $HOME/Pictures/wallpapers.tar.gz "https://drive.google.com/uc?export=download&id=1knNpKAqlEfMMjluH71J002Gi0zpX0P09"
-	    tar xvf $HOME/Pictures/wallpapers.tar.gz -C $HOME/Pictures
+	    tar xvf $HOME/Pictures/wallpapers.tar.gz -C $HOME/pictures
 	    break;;
         [Nn]* )
             break;;
