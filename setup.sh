@@ -45,7 +45,7 @@ while true; do
                  			arc-gtk-theme gtk-engine-murrine gnome-themes-extra gtk-engines mpv\
                 			tree npm  wget unzip unrar tk  redshift neofetch \
                  			pinta openssh nodejs btop texlive-bin texlive-core texlive-latexextra texlive-science texlive-pictures \
-					lynx bat ueberzug unclutter bear mc mlocate
+					lynx bat ueberzug unclutter bear mc mlocate fzf
             xdg-user-dirs-update
 	    mv Downloads downloads
 	    mv Documents documents
